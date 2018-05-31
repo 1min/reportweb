@@ -1,0 +1,119 @@
+
+#Intro-Company {
+  display: flex;
+}
+
+.company_index {
+  margin-left: 32px;
+  margin-left: 2rem;
+  margin-top: 32px;
+  margin-top: 2rem;
+  width: 80%;
+  max-width:200px;
+  min-width:135px;
+}
+
+.article_company {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+  margin-top: 3rem;
+  margin-left: 16px;
+  margin-left: 1rem;
+  width: 100%;
+  margin-bottom: 48px;
+  margin-bottom: 3rem;
+  margin-right: 80px;
+  margin-right: 5rem;
+}
+
+.company_index_1 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.company_index_2 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.company_index_1_contents {
+  display: block;
+  width: 100%;
+}
+
+.company_index_2_contents {
+  display: none;
+  width: 100%;
+}
+
+/* Brand */
+
+#Brand-Company {
+  display: flex;
+}
+.Brand_index_1 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+
+
+
+
+/* Rent */
+
+#Rent-Container {
+  display: flex;
+}
+
+.Rent_index {
+  margin-left: 32px;
+  margin-left: 2rem;
+  margin-top: 32px;
+  margin-top: 2rem;
+  width: 80%;
+  max-width:200px;
+  min-width:135px;
+}
+
+.Rent_index_1 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.Rent_index_2 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.Rent_index_3 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.Rent_index_4 {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.Rent_index_1_contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Rent_index_2_contents {
+  display: none;
+  width: 100%;
+}
+
+.Rent_index_3_contents {
+  display: none;
+  width: 100%;
+}
+
+.Rent_index_4_contents {
+  display: none;
+  width: 100%;
+}

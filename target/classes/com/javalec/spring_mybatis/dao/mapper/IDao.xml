@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.spring_mybatis.dao.IDao">
+	<select id="listDao" resultType="com.javalec.spring_mybatis.dto.ContentDto">
+		SELECT * FROM BOARD ORDER BY MID DESC
+	</select>
+	
+	
+	<insert id="writeDao">
+		INSERT INTO BOARD (MID, MWRITER, MCONTENT) VALUES (BOARD_SEQ.NEXTVAL, #{param1}, #{param2})
+	</insert>
+	
+	
+	<delete id="deleteDao">
+		DELETE FROM BOARD WHERE MID = #{param1}
+	</delete>
+	
+	<!-- 프로젝트 -->
+	
+			<select id="ProfileOverlapDao" resultType="com.javalec.spring_mybatis.dto.ProfileDto">
+					SELECT id from profile where id=#{param1}
+			</select>
+	<!-- 미사용 -->
+	
+			<insert id="joinDao">
+		INSERT INTO profile (name,id,pw,tel) VALUES (#{param1}, #{param2},#{param3},#{param4})
+		</insert>
+			<!-- 회원가입 -->
+			
+			<select id="loginDao" resultType="com.javalec.spring_mybatis.dto.ProfileDto">
+				SELECT id,pw FROM profile where id=#{param1} AND pw=#{param2}
+			</select>
+			<!-- 로그인 -->
+			
+			<select id="ordercheckDao" resultType="int">
+				select min(${param1}) from container where day between #{param2} and #{param3}
+			</select>
+			<!-- 수량확인 -->
+			
+			<insert id="orderDao">
+		INSERT INTO `order`(id,con_type,quantity,s_date,l_date,r_address,etc,rman_name,rman_tel,rman_company,rman_mail,order_stat) 
+		values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},
+ 		#{param10},#{param11},default)
+			</insert>
+
+			<!-- 주문서만들기 -->
+			<update id="conupdateDao">
+				update container set ${param1}=${param1}-(select quantity from `order` order by order_id desc limit 1) where day between #{param2} and #{param3}           
+			</update>
+			<!--컨테이너 업데이트  -->
+			
+			<select id="myDao" resultType="com.javalec.spring_mybatis.dto.OrderDto">
+				SELECT * FROM `order` where id=#{param1}
+			</select>
+			<!-- 마이리스트 주문정보 -->
+				<select id="profileDao" resultType="com.javalec.spring_mybatis.dto.ProfileDto">
+				SELECT * FROM profile where id=#{param1}
+				</select>
+			<!-- 수정페이지 보기 -->
+			
+			<update id="modifyProfile">
+			update profile set name=#{param1},pw=#{param3},tel=#{param4} where id=#{param2} 
+			</update>
+			
+			<!-- 회원정보 수정 -->
+</mapper>
